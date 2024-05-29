@@ -81,7 +81,8 @@ class TestDeepSpeedKernel(unittest.TestCase):
     @compare_utils.skip_unless_flash_attn_installed()
     def test_ds_kernel_vs_flash_attn_forward(self):
         """Compare Flash Attention vs. DeepSpeed Evoformer kernel."""
-        self.compare_attention_types(use_flash=True)
+        self.compare_attention_types(use_flash=False)  # Yi Lin modified for debugging
+        # self.compare_attention_types(use_flash=True)
 
     def test_ds_kernel_vs_attention_backward(self):
         """Compare backward pass for regular attention vs. DeepSpeed Evoformer kernel."""

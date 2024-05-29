@@ -474,7 +474,7 @@ config = mlc.ConfigDict(
             # Use FlashAttention in selected modules. Mutually exclusive with 
             # use_deepspeed_evo_attention and use_lma. Doesn't work that well
             # on long sequences (>1000 residues).
-            "use_flash": False, #True,  # False,
+            "use_flash": False,
             "offload_inference": False,
             "c_z": c_z,
             "c_m": c_m,
