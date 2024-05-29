@@ -208,15 +208,22 @@ class AlphaFold(nn.Module):
 
     def iteration(self, feats, prevs, _recycle=True):
         # Primary output dictionary
+        print("\n\n\n\n\n\none iteration begins $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
+        print("input feats:", feats)
+        print("input prevs:", prevs)
+        print("input _recycle:", _recycle)
         outputs = {}
 
         # This needs to be done manually for DeepSpeed's sake
         dtype = next(self.parameters()).dtype
+        print("dtype:", dtype)
         for k in feats:
+            print(f"k={k} feats[k].dtype:", feats[k].dtype)
             if feats[k].dtype == torch.float32:
                 feats[k] = feats[k].to(dtype=dtype)
 
         # Grab some data about the input
+        print("feats['target_feat'].shape:", feats["target_feat"].shape)
         batch_dims = feats["target_feat"].shape[:-2]
         no_batch_dims = len(batch_dims)
         n = feats["target_feat"].shape[-2]
@@ -552,6 +559,7 @@ class AlphaFold(nn.Module):
         early_stop = False
         num_recycles = 0
         for cycle_no in range(num_iters):
+            print(f"###########################################################################################################   cycle no: {cycle_no}")
             # Select the features for the current recycling cycle
             fetch_cur_batch = lambda t: t[..., cycle_no]
             feats = tensor_tree_map(fetch_cur_batch, batch)
