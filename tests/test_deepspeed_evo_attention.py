@@ -286,7 +286,6 @@ class TestDeepSpeedKernel(unittest.TestCase):
         eps = 0.2
         with open("tests/test_data/sample_feats.pickle", "rb") as fp:
             batch = pickle.load(fp)
-        print("batch here 00:", batch)
 
         # atom37_to_atom14 doesn't like batches
         batch["residx_atom14_to_atom37"] = batch["residx_atom14_to_atom37"][0]
@@ -313,13 +312,9 @@ class TestDeepSpeedKernel(unittest.TestCase):
         # print(batch["target_feat"].shape)
         batch["target_feat"] = torch.nn.functional.one_hot(batch["aatype"], consts.msa_logits - 1).to(torch.float32)
         batch["template_all_atom_mask"] = batch["template_all_atom_masks"]
-
-        print("batch here 01:", batch)
-
         batch.update(
             data_transforms.atom37_to_torsion_angles("template_")(batch)
         )
-        print("batch here 02:", batch)
 
         # Move the recycling dimension to the end
         move_dim = lambda t: t.permute(*range(len(t.shape))[1:], 0)

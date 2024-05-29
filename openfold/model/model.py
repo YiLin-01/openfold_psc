@@ -565,11 +565,14 @@ class AlphaFold(nn.Module):
                         torch.clear_autocast_cache()
 
                 # Run the next iteration of the model
+                print("feats here 00:", feats)
+                print("prevs here 00:", prevs)
                 outputs, m_1_prev, z_prev, x_prev, early_stop = self.iteration(
                     feats,
                     prevs,
                     _recycle=(num_iters > 1)
                 )
+                print("outputs here 00:", outputs)
 
                 num_recycles += 1
 
@@ -579,8 +582,9 @@ class AlphaFold(nn.Module):
                     del m_1_prev, z_prev, x_prev
                 else:
                     break
-
+        print("outputs here 01:", outputs)
         outputs["num_recycles"] = torch.tensor(num_recycles, device=feats["aatype"].device)
+        print("outputs here 02:", outputs)
 
         if "asym_id" in batch:
             outputs["asym_id"] = feats["asym_id"]
