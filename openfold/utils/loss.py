@@ -711,10 +711,10 @@ def compute_tm(
     denom = eps + torch.sum(pair_residue_weights, dim=-1, keepdims=True)
     normed_residue_mask = pair_residue_weights / denom
     per_alignment = torch.sum(predicted_tm_term * normed_residue_mask, dim=-1)
-    print("logits:", logits)
-    print("probs:", probs)
-    print("tm_per_bin:", tm_per_bin)
-    print("pair_mask:", pair_mask)
+    # print("logits:", logits)
+    # print("probs:", probs)
+    # print("tm_per_bin:", tm_per_bin)
+    # print("pair_mask:", pair_mask)
 
 
 
@@ -724,12 +724,13 @@ def compute_tm(
 
     weighted = per_alignment * residue_weights
     # debug
-    try:
-        argmax = (weighted == torch.max(weighted)).nonzero()[0]
-    except Exception as e:
-        print("eps:", eps)
-        # print(weighted)
-        print("Error", e)
+    # try:
+    #     argmax = (weighted == torch.max(weighted)).nonzero()[0]
+    # except Exception as e:
+    #     # print("eps:", eps)
+    #     # print(weighted)
+    #     print("Error", e)
+    argmax = (weighted == torch.max(weighted)).nonzero()[0]
     return per_alignment[tuple(argmax)]
 
 

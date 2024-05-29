@@ -74,7 +74,9 @@ class AuxiliaryHeads(nn.Module):
         ] = experimentally_resolved_logits
 
         if self.config.tm.enabled:
+            print("outputs['pair']:", outputs["pair"])
             tm_logits = self.tm(outputs["pair"])
+            print("tm_logits:", tm_logits)
             aux_out["tm_logits"] = tm_logits
             aux_out["ptm_score"] = compute_tm(
                 tm_logits, **self.config.tm
