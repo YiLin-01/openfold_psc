@@ -223,7 +223,7 @@ class TestDeepSpeedKernel(unittest.TestCase):
     def test_compare_evoformer_bf16(self):
         """Run evoformer comparison test with BF16 precision."""
         # self.compare_evoformer(dtype=torch.float16, eps=4e-2)
-        self.compare_evoformer(dtype=torch.float32, eps=4e-2)
+        self.compare_evoformer(dtype=torch.float32, eps=2e-2)
         #Yi's idea: self.compare_evoformer(dtype=torch.float32, eps=2e-2)
 
     def test_compare_evoformer_fp32(self):
