@@ -713,9 +713,11 @@ def compute_tm(
     per_alignment = torch.sum(predicted_tm_term * normed_residue_mask, dim=-1)
 
     weighted = per_alignment * residue_weights
+    # debug
     try:
         argmax = (weighted == torch.max(weighted)).nonzero()[0]
     except Exception as e:
+        print(eps)
         print(weighted)
         print("Error", e)
     return per_alignment[tuple(argmax)]
