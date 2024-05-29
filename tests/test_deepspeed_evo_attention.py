@@ -322,8 +322,8 @@ class TestDeepSpeedKernel(unittest.TestCase):
         with torch.no_grad():
             # original: with torch.cuda.amp.autocast(dtype=torch.bfloat16):
             # Yi's idea: with torch.cuda.amp.autocast(dtype=torch.float32):
-            with torch.cuda.amp.autocast(dtype=torch.float32):
-            # with torch.cuda.amp.autocast(dtype=torch.float16):
+            # with torch.cuda.amp.autocast(dtype=torch.float32):
+            with torch.cuda.amp.autocast(dtype=torch.float16):
                 model = compare_utils.get_global_pretrained_openfold()
                 model.globals.use_deepspeed_evo_attention = False
                 out_repro = model(batch)
