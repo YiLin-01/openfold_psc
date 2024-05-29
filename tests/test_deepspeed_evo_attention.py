@@ -326,7 +326,10 @@ class TestDeepSpeedKernel(unittest.TestCase):
             with torch.cuda.amp.autocast(dtype=torch.float16):
                 model = compare_utils.get_global_pretrained_openfold()
                 model.globals.use_deepspeed_evo_attention = False
+                print("[model !!!!!!!]", model)
+                print("batch before:", batch[:1])
                 out_repro = model(batch)
+                print("batch after:", batch[:1])
 
                 # Enable kernel
                 model.globals.use_deepspeed_evo_attention = True
