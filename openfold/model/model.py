@@ -586,6 +586,7 @@ class AlphaFold(nn.Module):
             outputs["asym_id"] = feats["asym_id"]
 
         # Run auxiliary heads
+        print("self.aux_heads(outputs):", self.aux_heads(outputs))
         outputs.update(self.aux_heads(outputs))
 
         return outputs
