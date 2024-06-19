@@ -110,13 +110,24 @@ def main(
         print("Creating FASTA from alignment directory...")
         chain_dirs = list(alignment_dir.iterdir())
 
-        with ThreadPoolExecutor() as executor:
-            futures = [
-                executor.submit(chain_dir_to_fasta, chain_dir)
-                for chain_dir in chain_dirs
-            ]
-            for future in tqdm(as_completed(futures), total=len(chain_dirs)):
-                fasta.append(future.result())
+        except_skip_cnt = 0
+        for chain_dir in tqdm(chain_dirs):
+            try:
+                future = chain_dir_to_fasta(chain_dir)
+                print("future:", future[:20])
+                fasta.append(future)
+            except Exception as e:
+                except_skip_cnt += 1
+                print(f"skip: {except_skip_cnt}!!")
+
+
+        # with ThreadPoolExecutor() as executor:
+        #     futures = [
+        #         executor.submit(chain_dir_to_fasta, chain_dir)
+        #         for chain_dir in chain_dirs
+        #     ]
+        #     for future in tqdm(as_completed(futures), total=len(chain_dirs)):
+        #         fasta.append(future.result())
 
     elif alignment_db_index:
         print("Creating FASTA from alignment dbs...")

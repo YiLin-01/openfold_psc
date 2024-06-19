@@ -1,0 +1,4 @@
+cp 1
+cp 6
+[2024-06-11 09:10:45,668] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+cpfinish!

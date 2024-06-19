@@ -1,0 +1,117 @@
++ wandb login
+wandb: Currently logged in as: ylin01 (01_personal). Use `wandb login --relogin` to force relogin
++ echo 'cp 1'
++ module load cuda/11
+++ /usr/share/lmod/lmod/libexec/lmod bash load cuda/11
++ eval '__LMOD_REF_COUNT_CPATH=/opt/packages/cuda/v11.7.1/include:1;' export '__LMOD_REF_COUNT_CPATH;' 'CPATH=/opt/packages/cuda/v11.7.1/include;' export 'CPATH;' 'CUDA_HOME=/opt/packages/cuda/v11.7.1;' export 'CUDA_HOME;' 'CUDA_PATH=/opt/packages/cuda/v11.7.1;' export 'CUDA_PATH;' '__LMOD_REF_COUNT_INCLUDE=/opt/packages/cuda/v11.7.1/include:1;' export '__LMOD_REF_COUNT_INCLUDE;' 'INCLUDE=/opt/packages/cuda/v11.7.1/include;' export 'INCLUDE;' '__LMOD_REF_COUNT_LD_LIBRARY_PATH=/opt/packages/cuda/v11.7.1/lib64:1\;/opt/packages/cuda/v11.7.1/nvvm/lib64:1\;/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64:1;' export '__LMOD_REF_COUNT_LD_LIBRARY_PATH;' 'LD_LIBRARY_PATH=/opt/packages/cuda/v11.7.1/lib64:/opt/packages/cuda/v11.7.1/nvvm/lib64:/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64;' export 'LD_LIBRARY_PATH;' '__LMOD_REF_COUNT_LIBRARY_PATH=/opt/packages/cuda/v11.7.1/lib64:1\;/opt/packages/cuda/v11.7.1/nvvm/lib64:1\;/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64:1;' export '__LMOD_REF_COUNT_LIBRARY_PATH;' 'LIBRARY_PATH=/opt/packages/cuda/v11.7.1/lib64:/opt/packages/cuda/v11.7.1/nvvm/lib64:/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64;' export 'LIBRARY_PATH;' '__LMOD_REF_COUNT_LOADEDMODULES=allocations/1.0:1\;psc.allocations.user/1.0:1\;cuda/11.7.1:1;' export '__LMOD_REF_COUNT_LOADEDMODULES;' 'LOADEDMODULES=allocations/1.0:psc.allocations.user/1.0:cuda/11.7.1;' export 'LOADEDMODULES;' '__LMOD_REF_COUNT_MANPATH=/opt/packages/cuda/v11.7.1/gds/man:1\;/usr/share/lmod/lmod/share/man:1\;/opt/puppetlabs/puppet/share/man:1;' export '__LMOD_REF_COUNT_MANPATH;' 'MANPATH=/opt/packages/cuda/v11.7.1/gds/man:/usr/share/lmod/lmod/share/man::/opt/puppetlabs/puppet/share/man;' export 'MANPATH;' 'MODULEPATH=/etc/scl/modulefiles:/opt/modulefiles/production:/opt/modulefiles/preproduction:/opt/modulefiles/deprecated:/usr/share/modulefiles:/usr/share/modulefiles/Linux:/usr/share/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core;' export 'MODULEPATH;' '__LMOD_REF_COUNT_PATH=/opt/packages/cuda/v11.7.1/bin:1\;/opt/packages/cuda/v11.7.1/libnvvp:1\;/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/envs/openfold_env/bin:2\;/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/bin:1\;/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/condabin:1\;/jet/home/ylinf/.local/bin:1\;/jet/home/ylinf/bin:1\;/opt/packages/psc.allocations.user/bin:1\;/opt/packages/allocations/bin:1\;/usr/local/bin:1\;/usr/bin:1\;/usr/local/sbin:1\;/usr/sbin:1\;/opt/packages/interact/bin:1\;/opt/puppetlabs/bin:1;' export '__LMOD_REF_COUNT_PATH;' 'PATH=/opt/packages/cuda/v11.7.1/bin:/opt/packages/cuda/v11.7.1/libnvvp:/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/envs/openfold_env/bin:/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/bin:/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/condabin:/jet/home/ylinf/.local/bin:/jet/home/ylinf/bin:/opt/packages/psc.allocations.user/bin:/opt/packages/allocations/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/packages/interact/bin:/opt/puppetlabs/bin;' export 'PATH;' '__LMOD_REF_COUNT_PKG_CONFIG_PATH=/opt/packages/cuda/v11.7.1/lib64/pkgconfig:1;' export '__LMOD_REF_COUNT_PKG_CONFIG_PATH;' 'PKG_CONFIG_PATH=/opt/packages/cuda/v11.7.1/lib64/pkgconfig;' export 'PKG_CONFIG_PATH;' '__LMOD_REF_COUNT__LMFILES_=/opt/modulefiles/production/allocations/1.0.lua:1\;/opt/modulefiles/production/psc.allocations.user/1.0.lua:1\;/opt/modulefiles/production/cuda/11.7.1.lua:1;' export '__LMOD_REF_COUNT__LMFILES_;' '_LMFILES_=/opt/modulefiles/production/allocations/1.0.lua:/opt/modulefiles/production/psc.allocations.user/1.0.lua:/opt/modulefiles/production/cuda/11.7.1.lua;' export '_LMFILES_;' '_ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXthbGxvY2F0aW9ucz17WyJmbiJdPSIvb3B0L21vZHVsZWZpbGVzL3Byb2R1Y3Rpb24vYWxsb2NhdGlvbnMvMS4wLmx1YSIsWyJmdWxsTmFtZSJdPSJhbGxvY2F0aW9ucy8xLjAiLFsibG9hZE9yZGVyIl09MSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJhbGxvY2F0aW9ucyIsfSxjdWRhPXtbImZuIl09Ii9vcHQvbW9kdWxlZmlsZXMvcHJvZHVjdGlvbi9jdWRhLzExLjcuMS5sdWEiLFsiZnVsbE5hbWUiXT0iY3VkYS8xMS43LjEiLFsibG9h;' export '_ModuleTable001_;' '_ModuleTable002_=ZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJjdWRhLzExIix9LFsicHNjLmFsbG9jYXRpb25zLnVzZXIiXT17WyJmbiJdPSIvb3B0L21vZHVsZWZpbGVzL3Byb2R1Y3Rpb24vcHNjLmFsbG9jYXRpb25zLnVzZXIvMS4wLmx1YSIsWyJmdWxsTmFtZSJdPSJwc2MuYWxsb2NhdGlvbnMudXNlci8xLjAiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJwc2MuYWxsb2NhdGlvbnMudXNlciIsfSx9LG1wYXRoQT17Ii9ldGMvc2NsL21vZHVsZWZpbGVzIiwiL29wdC9tb2R1bGVmaWxlcy9wcm9kdWN0aW9uIiwiL29wdC9t;' export '_ModuleTable002_;' '_ModuleTable003_=b2R1bGVmaWxlcy9wcmVwcm9kdWN0aW9uIiwiL29wdC9tb2R1bGVmaWxlcy9kZXByZWNhdGVkIiwiL3Vzci9zaGFyZS9tb2R1bGVmaWxlcyIsIi91c3Ivc2hhcmUvbW9kdWxlZmlsZXMvTGludXgiLCIvdXNyL3NoYXJlL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyL3NoYXJlL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlIix9LFsic3lzdGVtQmFzZU1QQVRIIl09Ii9ldGMvc2NsL21vZHVsZWZpbGVzOi9vcHQvbW9kdWxlZmlsZXMvcHJvZHVjdGlvbjovb3B0L21vZHVsZWZpbGVzL3ByZXByb2R1Y3Rpb246L29wdC9tb2R1bGVmaWxlcy9kZXByZWNhdGVkOi91c3Ivc2hhcmUvbW9kdWxlZmlsZXM6L3Vzci9zaGFyZS9tb2R1bGVmaWxlcy9MaW51eDovdXNyL3NoYXJlL21vZHVsZWZp;' export '_ModuleTable003_;' '_ModuleTable004_=bGVzL0NvcmU6L3Vzci9zaGFyZS9sbW9kL2xtb2QvbW9kdWxlZmlsZXMvQ29yZSIsfQ==;' export '_ModuleTable004_;' '_ModuleTable_Sz_=4;' export '_ModuleTable_Sz_;'
+++ __LMOD_REF_COUNT_CPATH=/opt/packages/cuda/v11.7.1/include:1
+++ export __LMOD_REF_COUNT_CPATH
+++ CPATH=/opt/packages/cuda/v11.7.1/include
+++ export CPATH
+++ CUDA_HOME=/opt/packages/cuda/v11.7.1
+++ export CUDA_HOME
+++ CUDA_PATH=/opt/packages/cuda/v11.7.1
+++ export CUDA_PATH
+++ __LMOD_REF_COUNT_INCLUDE=/opt/packages/cuda/v11.7.1/include:1
+++ export __LMOD_REF_COUNT_INCLUDE
+++ INCLUDE=/opt/packages/cuda/v11.7.1/include
+++ export INCLUDE
+++ __LMOD_REF_COUNT_LD_LIBRARY_PATH='/opt/packages/cuda/v11.7.1/lib64:1;/opt/packages/cuda/v11.7.1/nvvm/lib64:1;/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64:1'
+++ export __LMOD_REF_COUNT_LD_LIBRARY_PATH
+++ LD_LIBRARY_PATH=/opt/packages/cuda/v11.7.1/lib64:/opt/packages/cuda/v11.7.1/nvvm/lib64:/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64
+++ export LD_LIBRARY_PATH
+++ __LMOD_REF_COUNT_LIBRARY_PATH='/opt/packages/cuda/v11.7.1/lib64:1;/opt/packages/cuda/v11.7.1/nvvm/lib64:1;/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64:1'
+++ export __LMOD_REF_COUNT_LIBRARY_PATH
+++ LIBRARY_PATH=/opt/packages/cuda/v11.7.1/lib64:/opt/packages/cuda/v11.7.1/nvvm/lib64:/opt/packages/cuda/v11.7.1/extras/CUPTI/lib64
+++ export LIBRARY_PATH
+++ __LMOD_REF_COUNT_LOADEDMODULES='allocations/1.0:1;psc.allocations.user/1.0:1;cuda/11.7.1:1'
+++ export __LMOD_REF_COUNT_LOADEDMODULES
+++ LOADEDMODULES=allocations/1.0:psc.allocations.user/1.0:cuda/11.7.1
+++ export LOADEDMODULES
+++ __LMOD_REF_COUNT_MANPATH='/opt/packages/cuda/v11.7.1/gds/man:1;/usr/share/lmod/lmod/share/man:1;/opt/puppetlabs/puppet/share/man:1'
+++ export __LMOD_REF_COUNT_MANPATH
+++ MANPATH=/opt/packages/cuda/v11.7.1/gds/man:/usr/share/lmod/lmod/share/man::/opt/puppetlabs/puppet/share/man
+++ export MANPATH
+++ MODULEPATH=/etc/scl/modulefiles:/opt/modulefiles/production:/opt/modulefiles/preproduction:/opt/modulefiles/deprecated:/usr/share/modulefiles:/usr/share/modulefiles/Linux:/usr/share/modulefiles/Core:/usr/share/lmod/lmod/modulefiles/Core
+++ export MODULEPATH
+++ __LMOD_REF_COUNT_PATH='/opt/packages/cuda/v11.7.1/bin:1;/opt/packages/cuda/v11.7.1/libnvvp:1;/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/envs/openfold_env/bin:2;/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/bin:1;/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/condabin:1;/jet/home/ylinf/.local/bin:1;/jet/home/ylinf/bin:1;/opt/packages/psc.allocations.user/bin:1;/opt/packages/allocations/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/opt/packages/interact/bin:1;/opt/puppetlabs/bin:1'
+++ export __LMOD_REF_COUNT_PATH
+++ PATH=/opt/packages/cuda/v11.7.1/bin:/opt/packages/cuda/v11.7.1/libnvvp:/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/envs/openfold_env/bin:/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/bin:/ocean/projects/cis240057p/ylinf/Mamba/mambaforge/condabin:/jet/home/ylinf/.local/bin:/jet/home/ylinf/bin:/opt/packages/psc.allocations.user/bin:/opt/packages/allocations/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/packages/interact/bin:/opt/puppetlabs/bin
+++ export PATH
+++ __LMOD_REF_COUNT_PKG_CONFIG_PATH=/opt/packages/cuda/v11.7.1/lib64/pkgconfig:1
+++ export __LMOD_REF_COUNT_PKG_CONFIG_PATH
+++ PKG_CONFIG_PATH=/opt/packages/cuda/v11.7.1/lib64/pkgconfig
+++ export PKG_CONFIG_PATH
+++ __LMOD_REF_COUNT__LMFILES_='/opt/modulefiles/production/allocations/1.0.lua:1;/opt/modulefiles/production/psc.allocations.user/1.0.lua:1;/opt/modulefiles/production/cuda/11.7.1.lua:1'
+++ export __LMOD_REF_COUNT__LMFILES_
+++ _LMFILES_=/opt/modulefiles/production/allocations/1.0.lua:/opt/modulefiles/production/psc.allocations.user/1.0.lua:/opt/modulefiles/production/cuda/11.7.1.lua
+++ export _LMFILES_
+++ _ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPWZhbHNlLFsiY19zaG9ydFRpbWUiXT1mYWxzZSxkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXthbGxvY2F0aW9ucz17WyJmbiJdPSIvb3B0L21vZHVsZWZpbGVzL3Byb2R1Y3Rpb24vYWxsb2NhdGlvbnMvMS4wLmx1YSIsWyJmdWxsTmFtZSJdPSJhbGxvY2F0aW9ucy8xLjAiLFsibG9hZE9yZGVyIl09MSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJhbGxvY2F0aW9ucyIsfSxjdWRhPXtbImZuIl09Ii9vcHQvbW9kdWxlZmlsZXMvcHJvZHVjdGlvbi9jdWRhLzExLjcuMS5sdWEiLFsiZnVsbE5hbWUiXT0iY3VkYS8xMS43LjEiLFsibG9h
+++ export _ModuleTable001_
+++ _ModuleTable002_=ZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJjdWRhLzExIix9LFsicHNjLmFsbG9jYXRpb25zLnVzZXIiXT17WyJmbiJdPSIvb3B0L21vZHVsZWZpbGVzL3Byb2R1Y3Rpb24vcHNjLmFsbG9jYXRpb25zLnVzZXIvMS4wLmx1YSIsWyJmdWxsTmFtZSJdPSJwc2MuYWxsb2NhdGlvbnMudXNlci8xLjAiLFsibG9hZE9yZGVyIl09Mixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJwc2MuYWxsb2NhdGlvbnMudXNlciIsfSx9LG1wYXRoQT17Ii9ldGMvc2NsL21vZHVsZWZpbGVzIiwiL29wdC9tb2R1bGVmaWxlcy9wcm9kdWN0aW9uIiwiL29wdC9t
+++ export _ModuleTable002_
+++ _ModuleTable003_=b2R1bGVmaWxlcy9wcmVwcm9kdWN0aW9uIiwiL29wdC9tb2R1bGVmaWxlcy9kZXByZWNhdGVkIiwiL3Vzci9zaGFyZS9tb2R1bGVmaWxlcyIsIi91c3Ivc2hhcmUvbW9kdWxlZmlsZXMvTGludXgiLCIvdXNyL3NoYXJlL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyL3NoYXJlL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlIix9LFsic3lzdGVtQmFzZU1QQVRIIl09Ii9ldGMvc2NsL21vZHVsZWZpbGVzOi9vcHQvbW9kdWxlZmlsZXMvcHJvZHVjdGlvbjovb3B0L21vZHVsZWZpbGVzL3ByZXByb2R1Y3Rpb246L29wdC9tb2R1bGVmaWxlcy9kZXByZWNhdGVkOi91c3Ivc2hhcmUvbW9kdWxlZmlsZXM6L3Vzci9zaGFyZS9tb2R1bGVmaWxlcy9MaW51eDovdXNyL3NoYXJlL21vZHVsZWZp
+++ export _ModuleTable003_
+++ _ModuleTable004_=bGVzL0NvcmU6L3Vzci9zaGFyZS9sbW9kL2xtb2QvbW9kdWxlZmlsZXMvQ29yZSIsfQ==
+++ export _ModuleTable004_
+++ _ModuleTable_Sz_=4
+++ export _ModuleTable_Sz_
+++ : -s sh
++ eval
++ ret=0
++ /usr/share/lmod/8.2.7/libexec/log_modules load cuda/11
++ return 0
++ conda activate openfold_env
+
+CondaError: Run 'conda init' before 'conda activate'
+
++ export CUTLASS_PATH=/ocean/projects/cis240057p/ylinf/cutlass
++ CUTLASS_PATH=/ocean/projects/cis240057p/ylinf/cutlass
++ cd /ocean/projects/cis240057p/ylinf/openfold
++ echo 'cp 6'
++ python3 train_openfold.py OpenProteinSet/pdb_data/pdb_data/mmcif_files OpenProteinSet/alignment_data/alignments OpenProteinSet/pdb_data/pdb_data/mmcif_files/ outputs 2021-10-10 --template_release_dates_cache_path OpenProteinSet/pdb_data/pdb_data/data_caches/mmcif_cache.json --precision 32 --replace_sampler_ddp=True --seed 42 --deepspeed_config_path deepspeed_config.json --train_chain_data_cache_path OpenProteinSet/pdb_data/pdb_data/data_caches/chain_data_cache.json --obsolete_pdbs_file_path OpenProteinSet/pdb_data/pdb_data/obsolete.dat --num_nodes 1 --gpus 4 --wandb --experiment_name experiment_openfold_4gpus --wandb_project openfold_4gpus --wandb_entity ylin01
+usage: train_openfold.py [-h]
+                         [--train_mmcif_data_cache_path TRAIN_MMCIF_DATA_CACHE_PATH]
+                         [--use_single_seq_mode USE_SINGLE_SEQ_MODE]
+                         [--distillation_data_dir DISTILLATION_DATA_DIR]
+                         [--distillation_alignment_dir DISTILLATION_ALIGNMENT_DIR]
+                         [--val_data_dir VAL_DATA_DIR]
+                         [--val_alignment_dir VAL_ALIGNMENT_DIR]
+                         [--val_mmcif_data_cache_path VAL_MMCIF_DATA_CACHE_PATH]
+                         [--kalign_binary_path KALIGN_BINARY_PATH]
+                         [--train_filter_path TRAIN_FILTER_PATH]
+                         [--distillation_filter_path DISTILLATION_FILTER_PATH]
+                         [--obsolete_pdbs_file_path OBSOLETE_PDBS_FILE_PATH]
+                         [--template_release_dates_cache_path TEMPLATE_RELEASE_DATES_CACHE_PATH]
+                         [--use_small_bfd USE_SMALL_BFD] [--seed SEED]
+                         [--deepspeed_config_path DEEPSPEED_CONFIG_PATH]
+                         [--checkpoint_every_epoch]
+                         [--early_stopping EARLY_STOPPING]
+                         [--min_delta MIN_DELTA] [--patience PATIENCE]
+                         [--resume_from_ckpt RESUME_FROM_CKPT]
+                         [--resume_model_weights_only RESUME_MODEL_WEIGHTS_ONLY]
+                         [--resume_from_jax_params RESUME_FROM_JAX_PARAMS]
+                         [--log_performance LOG_PERFORMANCE] [--wandb]
+                         [--experiment_name EXPERIMENT_NAME]
+                         [--wandb_id WANDB_ID] [--wandb_project WANDB_PROJECT]
+                         [--wandb_entity WANDB_ENTITY]
+                         [--script_modules SCRIPT_MODULES]
+                         [--train_chain_data_cache_path TRAIN_CHAIN_DATA_CACHE_PATH]
+                         [--distillation_chain_data_cache_path DISTILLATION_CHAIN_DATA_CACHE_PATH]
+                         [--train_epoch_len TRAIN_EPOCH_LEN] [--log_lr]
+                         [--config_preset CONFIG_PRESET]
+                         [--_distillation_structure_index_path _DISTILLATION_STRUCTURE_INDEX_PATH]
+                         [--alignment_index_path ALIGNMENT_INDEX_PATH]
+                         [--distillation_alignment_index_path DISTILLATION_ALIGNMENT_INDEX_PATH]
+                         [--experiment_config_json EXPERIMENT_CONFIG_JSON]
+                         [--gpus GPUS] [--mpi_plugin] [--num_nodes NUM_NODES]
+                         [--precision PRECISION] [--max_epochs MAX_EPOCHS]
+                         [--log_every_n_steps LOG_EVERY_N_STEPS]
+                         [--flush_logs_every_n_steps FLUSH_LOGS_EVERY_N_STEPS]
+                         [--num_sanity_val_steps NUM_SANITY_VAL_STEPS]
+                         [--reload_dataloaders_every_n_epochs RELOAD_DATALOADERS_EVERY_N_EPOCHS]
+                         [--accumulate_grad_batches ACCUMULATE_GRAD_BATCHES]
+                         train_data_dir train_alignment_dir template_mmcif_dir
+                         output_dir max_template_date
+train_openfold.py: error: unrecognized arguments: --replace_sampler_ddp=True
++ echo 'cpfinish!'

@@ -208,22 +208,15 @@ class AlphaFold(nn.Module):
 
     def iteration(self, feats, prevs, _recycle=True):
         # Primary output dictionary
-        print("\n\n\n\n\n\none iteration begins $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-        print("input feats:", feats)
-        print("input prevs:", prevs)
-        print("input _recycle:", _recycle)
         outputs = {}
 
         # This needs to be done manually for DeepSpeed's sake
         dtype = next(self.parameters()).dtype
-        print("dtype:", dtype)
         for k in feats:
-            print(f"k={k} feats[k].dtype:", feats[k].dtype)
             if feats[k].dtype == torch.float32:
                 feats[k] = feats[k].to(dtype=dtype)
 
         # Grab some data about the input
-        print("feats['target_feat'].shape:", feats["target_feat"].shape)
         batch_dims = feats["target_feat"].shape[:-2]
         no_batch_dims = len(batch_dims)
         n = feats["target_feat"].shape[-2]
@@ -559,7 +552,6 @@ class AlphaFold(nn.Module):
         early_stop = False
         num_recycles = 0
         for cycle_no in range(num_iters):
-            print(f"###########################################################################################################   cycle no: {cycle_no}")
             # Select the features for the current recycling cycle
             fetch_cur_batch = lambda t: t[..., cycle_no]
             feats = tensor_tree_map(fetch_cur_batch, batch)
@@ -573,14 +565,11 @@ class AlphaFold(nn.Module):
                         torch.clear_autocast_cache()
 
                 # Run the next iteration of the model
-                print("feats here 00:", feats)
-                print("prevs here 00:", prevs)
                 outputs, m_1_prev, z_prev, x_prev, early_stop = self.iteration(
                     feats,
                     prevs,
                     _recycle=(num_iters > 1)
                 )
-                print("outputs here 00:", outputs)
 
                 num_recycles += 1
 
@@ -590,19 +579,13 @@ class AlphaFold(nn.Module):
                     del m_1_prev, z_prev, x_prev
                 else:
                     break
-        print("outputs here 01:", outputs)
+
         outputs["num_recycles"] = torch.tensor(num_recycles, device=feats["aatype"].device)
-        print("outputs here 02:", outputs)
 
         if "asym_id" in batch:
             outputs["asym_id"] = feats["asym_id"]
 
         # Run auxiliary heads
-        # print("outputs before:", outputs)
-        # print("self.aux_heads(outputs) before:", self.aux_heads(outputs))
         outputs.update(self.aux_heads(outputs))
-        # print("outputs after:", outputs)
-
-
 
         return outputs

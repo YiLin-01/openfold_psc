@@ -81,8 +81,7 @@ class TestDeepSpeedKernel(unittest.TestCase):
     @compare_utils.skip_unless_flash_attn_installed()
     def test_ds_kernel_vs_flash_attn_forward(self):
         """Compare Flash Attention vs. DeepSpeed Evoformer kernel."""
-        self.compare_attention_types(use_flash=False)  # Yi Lin modified for debugging
-        # self.compare_attention_types(use_flash=True)
+        self.compare_attention_types(use_flash=True)
 
     def test_ds_kernel_vs_attention_backward(self):
         """Compare backward pass for regular attention vs. DeepSpeed Evoformer kernel."""
@@ -222,9 +221,7 @@ class TestDeepSpeedKernel(unittest.TestCase):
 
     def test_compare_evoformer_bf16(self):
         """Run evoformer comparison test with BF16 precision."""
-        # self.compare_evoformer(dtype=torch.float16, eps=4e-2)
-        self.compare_evoformer(dtype=torch.float32, eps=2e-2)
-        #Yi's idea: self.compare_evoformer(dtype=torch.float32, eps=2e-2)
+        self.compare_evoformer(dtype=torch.bfloat16, eps=4e-2)
 
     def test_compare_evoformer_fp32(self):
         """Run evoformer comparison test with FP32 precision."""
@@ -320,34 +317,10 @@ class TestDeepSpeedKernel(unittest.TestCase):
         move_dim = lambda t: t.permute(*range(len(t.shape))[1:], 0)
         batch = tensor_tree_map(move_dim, batch)
         with torch.no_grad():
-            # original: with torch.cuda.amp.autocast(dtype=torch.bfloat16):
-            # Yi's idea: with torch.cuda.amp.autocast(dtype=torch.float32):
-            # with torch.cuda.amp.autocast(dtype=torch.float32):
-            with torch.cuda.amp.autocast(dtype=torch.float32):
+            with torch.cuda.amp.autocast(dtype=torch.bfloat16):
                 model = compare_utils.get_global_pretrained_openfold()
                 model.globals.use_deepspeed_evo_attention = False
-                # print("[model !!!!!!!]", model)
-                # print()
-                # print()
-                # print()
-                # print()
-                # print()
-                # print()
-                # print("batch before:", batch)
-                # print()
-                # print()
-                # print()
-                # print()
-                # print()
-                # print()
                 out_repro = model(batch)
-                # print("batch after:", batch)
-                # print()
-                # print()
-                # print()
-                # print()
-                # print()
-                # print()
 
                 # Enable kernel
                 model.globals.use_deepspeed_evo_attention = True
